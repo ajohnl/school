@@ -1,10 +1,12 @@
 //Ejercicio 14.
 #include <iostream>
 #include <stdio.h>
+#include <string>
+#include <cstring>
 int main(){using std::cout;using std::cin;
 	
-	char answer[2];
-	char no[3] = "no";
+	char answer[4] = "yes";
+	char no[4] = "no";
 	
 	while(std::strcmp(answer,no)!=0){
 		int i, j;

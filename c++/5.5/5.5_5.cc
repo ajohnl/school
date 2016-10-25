@@ -4,8 +4,24 @@
 #include <stdio.h>
 #include <iostream>
 
-int main{using std::cout;using std::cin;
+int main(){using std::cout;using std::cin;
 	int t=0,size;
-	cout << "Introduce numero de elemenots";
-	cin size;
-	int
+	cout << "Introduce numero de elementos:\n";
+	cin >> size;
+	int array[size];
+	while(t<size){
+		cout << "Introduce el " << t+1 << "º entero:\n";
+		cin >> array[t];
+		t++;
+	}
+	int maxint = array[0];
+	t=1;
+	while(t < size){
+		if(array[t] > maxint){
+			maxint = array[t];
+		}
+		t++;
+	}
+cout << "El numero mayor es " << maxint << "\n";
+return 0;	
+}

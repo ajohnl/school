@@ -11,4 +11,5 @@ int main(){using std::cout;
 		t++;
 		}
 	cout << sum << "\n";
-	}
+return 0;
+}

@@ -7,7 +7,9 @@ int main(){using std::cout;
 int array[6] = {3,5,2,8,2,8},t=0,sum=0;
 	while(t<5){
 		sum=sum + array[t];
+		cout << sum << "\n";
 		t++;
 		}
 	cout << sum << "\n";
+return 0;
 }

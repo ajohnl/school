@@ -1,0 +1,16 @@
+MVI B,80
+MVI C,01
+MOV A,C
+OUT 00
+
+rlc:RLC
+CMP B
+OUT 00
+JZ rrc
+JMP rlc
+rrc:RRC
+OUT 00
+CMP C
+JZ rlc
+JMP rrc
+

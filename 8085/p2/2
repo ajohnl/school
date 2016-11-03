@@ -1,11 +1,9 @@
 LDA 0100
-MVI L,01
-MOV B,A
-LDA 0100
+MVI H,01
 MOV L,A
-MOV E,D
 LXI B,0101
 MVI D,00
+MVI E,FF
 LDAX B
 MOV D,A
 restart:MOV A,C
@@ -16,11 +14,18 @@ MOV C,A
 LDAX B
 CMP D
 JNC newD
+continue:CMP E
+JC newE
 JMP restart
-
-hlt
 
 newD:MOV D,A
+JMP continue
+
+newE:MOV E,A
 JMP restart
 
-end:hlt
+end:MOV A,D
+OUT 01
+MOV A,E
+OUT 02
+HLT

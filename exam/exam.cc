@@ -25,11 +25,14 @@ int main(){using std::cout;using std::cin;using std::string;
 		
 		if(package[i].type != "Provincial" && package[i].type != "Nacional" && package[i].type != "Internacional"){goto type;}
 	}
+	bool exist=false;
 	cout << "Los codigos de tipo Internacional son:\n";
 	for(int i=0;i<size;i++){
 		if(package[i].type == "Internacional"){
 			cout << package[i].code << "\n";
+			exist=true;
 		}
+	if(exist=true){cout << "No hay";}
 	}
 	double totalmass=0;
 	for(int i;i<size;i++){
@@ -55,19 +58,17 @@ int main(){using std::cout;using std::cin;using std::string;
 	if(nac<inter && inter > prov){cout << "Hay mas internacionales.\n";}
 	if(inter<nac && nac > prov){cout << "Hay mas nacionales.\n";}
 	if(inter<prov && prov>nac){cout << "Hay mas provincionales\n";}
-	cout << "Introduce una masa:\n";
+	cout << "\nIntroduce una masa:\n";
 	double mass1;
 	cin >> mass1;
-	cout << "Estos paquetes tienen masa menor: \n";
+	bool exist2=false;
+	cout << "\nEstos paquetes tienen masa menor: \n";
 	for(int i=0;i<size;i++){
 		if(package[i].mass < mass1){
 			cout << "Codigo: " << package[i].code << "\n" << "Tipo: " << package[i].type << "\n\n";
+			exist2=true;
 		}
 	}
+	if(exist2=true){cout << "NO HAY";}
+	return 0;
 }
-
-
-
-
-
-

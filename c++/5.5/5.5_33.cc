@@ -7,33 +7,58 @@ ninguna minusvalıa y otro que contenga las personas con minusvalıa.*/
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <string.h>
 
 int main(){using std::cin;using std::cout;using std::string;
-	struct id{
+	struct Info{
 		string name;
 		bool crippled;
 	};
 	cout << "Introduce numero de personas:\n";
-	cin >> size;
-	int size;
-	id person[size];
-	char status[2];
+	int num;
+	cin >> num;
+	const int size=num;
+	Info person[size];
+	string status;
 	for(int i=0;i<size;i++){
 		cout << "Introduce [NOMBRE] de la " << i+1 << "ª persona:\n";
-		getline(cin>>ws,person[i].name);
+		getline(cin>>std::ws,person[i].name);
 		cout << "Tiene invalidez?(y/n)\n";
-		cin >> status;
+		getline(cin>>std::ws,status);
 		if(strcmp(status.c_str(),"y")==0){
-			person[i].cripped = true
+			person[i].crippled = true;
+		}
+		else{person[i].crippled = false;
 		}
 		}
 	int crippledamount=0,healthyamount;
 	for(int i=0;i<size;i++){
-		if (person[i].cripple == true){
+		if (person[i].crippled == true){
 			crippledamount = crippledamount + 1;
 		}
+	}
 	healthyamount = size - crippledamount;
-	id crippled[crippledamount];
-	id healthy[healthyamount];
+	const int newcrippledamount=crippledamount;
+	const int newhealthyamount=healthyamount;
+	string crippled[newcrippledamount];
+	string healthy[newhealthyamount];
+	int crip=0,health=0;
+	for(int i=0;i<size;i++){
+		if (person[i].crippled == true){
+			crippled[crip]=person[i].name;
+			crip++;
+			}
+		else{
+			healthy[health]=person[i].name;
+			health++;
+		}
+	}
+	cout << "Los sanos son:\n";
+	for(int i=0;i<healthyamount;i++){
+		cout << healthy[i] << "\n";
+	}
+	cout << "Los minusvalidos son:\n";
+	for(int i=0;i<crippledamount;i++){
+		cout << crippled[i] << "\n";
 }
 }

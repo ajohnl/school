@@ -1,4 +1,0 @@
-# Device	Mountpoint	FStype	Options	Dump	Pass#
-root	/		zfs	rw	0	0
-/dev/ada2s4a	none		swap	sw	0	0
-#/dev/ada0s3	/storage	ufs	rw	2	2

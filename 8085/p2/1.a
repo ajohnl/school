@@ -1,5 +1,0 @@
-a)
-¿Sabrías  explicar  a  qué  corresponde  numéricamente  del  resultado  en  el  puerto 
-02?
-
-Por cada ciclo, el flag CY (carry) se activa, lo cual significa que ha habido un overflow, so sea, una suma ha pasado por encima de 256, lo cual es el maximo numero que se puede almacenar en un registro (o memoria) ya que un numero de 8 bits en hexadecimal puede almacenar hasta FF (255) incluyendo 00, lo cual nos da un total de 256 diferentes numeros.
